@@ -1,12 +1,14 @@
 import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
-
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import useTheme from "../hooks/usetheme";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style = {styles.titulo}>roteiro</Text>
-      <Link href={"./sobre"}>Sobre</Link>
-      <Link href={"./Personagens"}>Personagens</Link>
+      <view style = {styles.main}
+      <Link href={styles.texto}>Home</Link>
+      <Link href={"./catalogo"}>Shope</Link>
+      <TouchableOpacity   onpress={toggleDarkMode}>MUDA TEMA</TouchableOpacity>
+    </view>
     </View>
   
 );
@@ -17,7 +19,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "red"
+    backgroundColor: "blue"
   },
   titulo : {
     color:"white",
